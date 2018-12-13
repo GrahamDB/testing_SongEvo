@@ -9,7 +9,7 @@ if(length(ls(pattern="^user_path$"))==0)
 print(user_path)
 library(parallel,lib.loc = user_path)
 library(devtools,lib.loc = user_path)
-setup_SongEvo_for_profiling <- function(ref="4f9e2c1", vignettes=TRUE){
+setup_SongEvo_for_profiling <- function(ref="2a68643", vignettes=TRUE){
   if(!is.null(SongEvo_release)){
     ref=SongEvo_release
   } else {
@@ -52,7 +52,7 @@ setup_SongEvo_for_profiling <- function(ref="4f9e2c1", vignettes=TRUE){
     library(devtools,lib.loc = user_path)
     library(httr,lib.loc = user_path)
     library(curl,lib.loc = user_path)
-    need_packs=c("sp","boot","geosphere")
+    need_packs=c("sp","boot","geosphere","Hmisc","lattice","reshape2")
     if(any(!need_packs %in% installed.packages()[,"Package"] )){
       
       .libPaths(c(local_path))
