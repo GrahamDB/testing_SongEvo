@@ -60,7 +60,7 @@ setup_SongEvo_for_profiling <- function(ref="2a68643", vignettes=TRUE){
       type="source", INSTALL_opts="--with-keep.source")
     }
     .libPaths(c(ref_path,local_path))
-    install_github("GrahamDB/SongEvo",ref=ref, args="--with-keep.source", build_vignettes=TRUE)
+    install_github("GrahamDB/SongEvo",ref=ref, args="--with-keep.source", build_vignettes=vignettes)
     if(!"SongEvo" %in% installed.packages()[,"Package"])
       stop("Failed to install SongEvo")
   }
